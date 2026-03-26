@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Пульт Своя Игра</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; background: #f0f2f5; }
+        .team { display: inline-block; margin: 20px; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .score { font-size: 48px; font-weight: bold; color: #1a73e8; }
+        button { font-size: 20px; padding: 10px 20px; cursor: pointer; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Пульт управления баллами</h1>
+    <div class="team">
+        <h2>Команда 1</h2>
+        <div id="score1" class="score">0</div>
+        <button onclick="changeScore('score1', 100)">+100</button>
+        <button onclick="changeScore('score1', -100)">-100</button>
+    </div>
+    <div class="team">
+        <h2>Команда 2</h2>
+        <div id="score2" class="score">0</div>
+        <button onclick="changeScore('score2', 100)">+100</button>
+        <button onclick="changeScore('score2', -100)">-100</button>
+    </div>
+
+    <script>
+        function changeScore(id, value) {
+            let el = document.getElementById(id);
+            el.innerText = parseInt(el.innerText) + value;
+        }
+    </script>
+</body>
+</html>
